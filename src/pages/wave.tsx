@@ -28,6 +28,11 @@ const wave = () => {
     try {
       const { ethereum }: any = window;
 
+      if (ethereum?.networkVersion !== '4') {
+        toast.error('Sorry, this app works on rinkeby only');
+        return;
+      }
+
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
