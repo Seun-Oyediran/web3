@@ -19,7 +19,19 @@ const SIdeBar = () => {
     <div className="app-dashboard-sidebar scrollbar">
       <div>
         <div className="sidebar-logo">
-          <h3>Dashboard</h3>
+          <a style={{ textDecoration: 'none' }} href="https://github.com/Seun-Oyediran">
+            <div className="d-flex justify-content-center">
+              <div style={{ maxWidth: '180px' }} className="image">
+                <img className="img-fluid" src="./images/avatar.png" alt="avatar" />
+              </div>
+            </div>
+            <div>
+              <h5 className="text-center mt-2 text-dark">Oyediran Seun </h5>
+              <p style={{ fontSize: '12px' }} className="text-muted font-weight-light text-center">
+                Web and mobile developer
+              </p>
+            </div>
+          </a>
         </div>
         <div className="links-container">
           {sideBarItemArray.map((item, index) => (
@@ -49,7 +61,7 @@ const SIdeBar = () => {
       <div className="disconnect-btn-con">
         <button type="button">
           <i className="fas fa-sign-out-alt" />
-          Disconnect
+          Connected
         </button>
       </div>
     </div>

@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-:root {
+/* :root {
   --light-green: #effdfb;
   --regular-green: #6adab0;
   --brand: #007236;
@@ -29,7 +29,7 @@
 
   --pd-xl: 2em 6.9em;
   --pd-md: 3em 5.5em;
-}
+} */
 
 html {
   scroll-behavior: smooth;
@@ -93,6 +93,8 @@ body {
   z-index: 5;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 0;
 }
 
 .app-dashboard-sidebar.mobile,
@@ -101,7 +103,7 @@ body {
 }
 
 .app-dashboard-sidebar .sidebar-logo {
-  padding-left: 22px;
+  /* padding-left: 22px; */
   font-size: 24px;
   color: #000000;
 }
@@ -175,10 +177,10 @@ body {
   align-items: center;
   gap: 10px;
   border: none;
-  color: #fb896b;
+  color: #28a745;
   font-size: 16px;
   line-height: 24px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* SIDERBAR STYLING ENDS HERE */
@@ -262,7 +264,8 @@ body {
 }
 
 .wave-container .wave-form .submit-btn button,
-.dashboard-home-container .button-con button {
+.dashboard-home-container .button-con button,
+.nft-page-con .submit-btn button {
   width: 100%;
   display: block;
   background-color: #7166d2;
@@ -273,6 +276,7 @@ body {
   color: #ffffff;
   font-size: 16px;
   margin: 1rem 0;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .wave-container .wave-form .error-text {
@@ -357,6 +361,11 @@ body {
   width: 100%;
 }
 
+.dashboard-home-container .content h3 {
+  font-size: 36px;
+  /* line-height: 22px; */
+}
+
 .dashboard-home-container .content .button-con,
 .dashboard-home-container .content p {
   max-width: 500px;
@@ -364,12 +373,29 @@ body {
 }
 
 .dashboard-home-container .content p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
 }
 
 .dashboard-home-container .content p:nth-of-type(2) {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* HOME PAGE STYLING ENDS HERE */
+
+.opensea-btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0 !important;
+}
+
+.opensea-btn img {
+  height: 26px;
+  margin-right: 10px;
+}
+
+.submit-btn a {
+  text-decoration: none;
+}

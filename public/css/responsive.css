@@ -75,6 +75,25 @@
   .app-navbar-container {
     padding: 8px 20px;
   }
+  .message-container h5 {
+    font-size: 12px;
+  }
+
+  .message-container h4 {
+    font-size: 16px;
+  }
+
+  .message-container p {
+    font-style: italic;
+    font-size: 11px;
+  }
+  .wave-container .header {
+    font-size: 24px;
+  }
+
+  .wave-container .details p {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 450.98px) {

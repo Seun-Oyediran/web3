@@ -43,13 +43,28 @@ const MobileSideBar = () => {
         >
           <motion.div
             initial={{ width: '0px', padding: '0px' }}
-            animate={{ width: '260px', padding: '15px 10px' }}
+            animate={{ width: '260px', padding: '15px 10px', paddingTop: '0px' }}
             exit={{ width: '0px', padding: '0px' }}
             className="app-dashboard-sidebar mobile scrollbar"
           >
             <div>
               <div className="sidebar-logo">
-                <h3>Dashboard</h3>
+                <a style={{ textDecoration: 'none' }} href="https://github.com/Seun-Oyediran">
+                  <div className="d-flex justify-content-center">
+                    <div style={{ maxWidth: '150px' }} className="image">
+                      <img className="img-fluid" src="./images/avatar.png" alt="avatar" />
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="text-center mt-2 text-dark">Oyediran Seun </h5>
+                    <p
+                      style={{ fontSize: '12px' }}
+                      className="text-muted font-weight-light text-center"
+                    >
+                      Web and mobile developer
+                    </p>
+                  </div>
+                </a>
               </div>
               <div className="links-container">
                 {sideBarItemArray.map((item, index) => (
