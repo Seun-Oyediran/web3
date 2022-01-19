@@ -73,16 +73,17 @@ const Home: NextPage = () => {
             <Lottie options={defaultOptions} />
           </div>
         </div>
-        <div className="content px-4 d-flex flex-column justify-content-center align-items-center">
+        <div className="content mt-5 py-5 mt-md-0 py-md-0 px-4 d-flex flex-column justify-content-md-center align-items-center">
           <h3 className="text-center mb-2">Welcome</h3>
           <p className="text-center">
-            Connect your wallet to get started. A very basic web3 app built by Oyediran Seun
+            Connect your wallet to get started. A web3 app built by Oyediran Seun that allows users
+            to wave at me and mint NFT
           </p>
           <p className="text-muted text-center my-1">
-            Please make sure you have MetaMask installed. This app works on rinkeby ethereum
+            Please make sure you have MetaMask installed. This app works on rinkeby only
           </p>
           <div className="button-con">
-            <motion.button onClick={connectWallet} whileHover={{ scale: 1.05 }} type="button">
+            <motion.button onClick={connectWallet} whileHover={{ scale: 0.96 }} type="button">
               Connect Wallet
             </motion.button>
           </div>

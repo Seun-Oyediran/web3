@@ -14,3 +14,7 @@ export const STOP_WAVE_AT_ME = 'STOP_WAVE_AT_ME';
 export const SET_ETH_BALANCE = 'SET_ETH_BALANCE';
 
 export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
+
+export const SET_TOTAL_NFT = 'SET_TOTAL_NFT';
+
+export const SET_MINTED_NFT = 'SET_MINTED_NFT';

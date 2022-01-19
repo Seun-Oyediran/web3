@@ -4,14 +4,15 @@ import { ethers } from 'ethers';
 import { toast } from 'react-toastify';
 import { Header } from '../components';
 import { useAppContext } from '../context/AppContext';
-import { formatFromNow, reverseArr } from '../utils';
+import { formatFromNow, handleError, reverseArr } from '../utils';
 import contractABI from '../utils/WavePortal.json';
 
-const wave = () => {
+const Wave = () => {
   const { state } = useAppContext();
   const { waves, account, waveContractAddress } = state;
 
   const [empty, setEmpty] = useState(false);
+  const [loading, setLoading] = useState(false);
   const inputRef = useRef<any>(null);
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -25,6 +26,7 @@ const wave = () => {
   };
 
   const waveAtMe = async (message: string) => {
+    setLoading(true);
     try {
       const { ethereum }: any = window;
 
@@ -42,13 +44,16 @@ const wave = () => {
           signer,
         );
 
-        await wavePortalContract.wave(message, { gasLimit: 300000 });
+        await wavePortalContract.wave(message);
+        setLoading(false);
       } else {
+        setLoading(false);
         // alert('Get MetaMask!');
         // console.log("Ethereum object doesn't exist!");
       }
-    } catch (error: any) {
-      toast.error(error?.error?.message || 'Something went wrong');
+    } catch (error) {
+      setLoading(false);
+      toast.error(handleError(error));
       // setLoading(false);
     }
   };
@@ -58,8 +63,13 @@ const wave = () => {
       <Header title="Welcome | Wave" />
       <div>
         <p>
+          {' '}
+          <span role="img" aria-label="Wave emoji">
+            👋
+          </span>
+          {' '}
           Waves:
-          {waves.length}
+          {` ${waves.length}`}
         </p>
       </div>
       <div className="wave-container">
@@ -81,7 +91,6 @@ const wave = () => {
           <form className="wave-form" onSubmit={onSubmit}>
             <motion.div className="input">
               <motion.input
-                // whileFocus={{ borderColor: 'rgb(83, 74, 186)' }}
                 whileFocus={{ borderColor: '#7166d2' }}
                 ref={inputRef}
                 type="text"
@@ -91,21 +100,21 @@ const wave = () => {
                   setEmpty(false);
                 }}
               />
-              {empty && <p className="error-text">Please enter a message or a link</p>}
+              {empty && <p className="error-text">Please enter a message or a </p>}
             </motion.div>
             <div className="submit-btn">
-              <motion.button type="submit" whileHover={{ scale: 1.05 }}>
+              <motion.button disabled={loading} type="submit" whileHover={{ scale: 0.96 }}>
                 {' '}
                 <span role="img" aria-label="Wave emoji">
                   👋
                 </span>
                 {' '}
-                Wave at me
+                {loading ? 'Waving...' : 'Wave at me'}
               </motion.button>
             </div>
           </form>
         </div>
-        <motion.div className="messsages-con" layout>
+        <motion.div className="messsages-con pb-5" layout>
           {reverseArr(waves).map((item: any, index) => (
             <motion.div className="message-container" layout key={index}>
               <div>
@@ -126,4 +135,4 @@ const wave = () => {
   );
 };
 
-export default wave;
+export default Wave;

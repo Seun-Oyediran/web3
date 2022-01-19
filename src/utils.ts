@@ -4,7 +4,7 @@ export const sideBarItemArray = [
   // { name: 'Dashboard', icon: 'fab fa-windows', link: routes.dashboard.path },
   { name: 'Wave', icon: 'fas fa-hand-paper', link: routes.wave.path },
   { name: 'NFT', icon: 'fas fa-images', link: routes.nft.path },
-  { name: 'Vote', icon: 'fas fa-person-booth', link: routes.vote.path },
+  // { name: 'Vote', icon: 'fas fa-person-booth', link: routes.vote.path },
 ];
 
 export function formatDate(date: Date) {
@@ -76,4 +76,16 @@ export function reverseArr(input: Array<any>) {
     ret.push(input[i]);
   }
   return ret;
+}
+
+export function handleError(payload: any) {
+  const msg = 'Something went wrong';
+
+  try {
+    const { error } = payload;
+
+    return error?.message || payload?.message || msg;
+  } catch (error) {
+    return msg;
+  }
 }
