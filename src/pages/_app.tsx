@@ -8,6 +8,7 @@ import { routes } from '../routes';
 
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import '../../public/css/global.css';
 import '../../public/css/responsive.css';
 import '../../public/css/custom.css';
