@@ -25,6 +25,9 @@
     overflow-y: hidden;
     padding: 0;
   }
+  .sidemenu-overlay {
+    display: block;
+  }
   .app-navbar-container .welcome-text {
     display: none;
   }
@@ -46,6 +49,14 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 2;
+  }
+  .app-dashboard-sidebar .link-con {
+    padding: 15px 20px;
+  }
+
+  .app-dashboard-sidebar .links-container .content p {
+    font-weight: 600;
+    font-size: 14px;
   }
 }
 

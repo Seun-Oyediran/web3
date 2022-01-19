@@ -43,7 +43,7 @@ const MobileSideBar = () => {
         >
           <motion.div
             initial={{ width: '0px', padding: '0px' }}
-            animate={{ width: '300px', padding: '30px' }}
+            animate={{ width: '260px', padding: '15px 10px' }}
             exit={{ width: '0px', padding: '0px' }}
             className="app-dashboard-sidebar mobile scrollbar"
           >
@@ -85,7 +85,7 @@ const MobileSideBar = () => {
             <div className="disconnect-btn-con">
               <button type="button">
                 <i className="fas fa-sign-out-alt" />
-                Disconnect
+                Connected
               </button>
             </div>
           </motion.div>
