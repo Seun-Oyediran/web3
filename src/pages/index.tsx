@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import Lottie from 'lottie-react';
 import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
+import Lottie from 'react-lottie';
 import { useAppContext } from '../context/AppContext';
 import { Header } from '../components';
 import { SET_ACCOUNT } from '../context/namespaces';
@@ -14,6 +14,12 @@ const spring = {
   type: 'spring',
   stiffness: 300,
   damping: 20,
+};
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: miningData,
 };
 
 const Home: NextPage = () => {
@@ -64,7 +70,7 @@ const Home: NextPage = () => {
             transition={spring}
           />
           <div className="lottie-con">
-            <Lottie animationData={miningData} loop autoPlay />
+            <Lottie options={defaultOptions} />
           </div>
         </div>
         <div className="content px-4 d-flex flex-column justify-content-center align-items-center">
