@@ -1,0 +1,73 @@
+@media (max-width: 1299.98px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+/* col-xl */
+@media (max-width: 1199.98px) {
+}
+
+@media (max-width: 867.98px) {
+  .app-dashboard-sidebar {
+    display: none;
+  }
+  .app-dashboard-sidebar.mobile {
+    display: flex;
+    /* position: relative; */
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0;
+  }
+  .app-navbar-container .welcome-text {
+    display: none;
+  }
+  .app-navbar-container .menu-bars {
+    display: block;
+    margin-left: -5px;
+  }
+  .app-navbar-container .menu-bars i {
+    display: inline-block;
+    font-size: 24px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .sidemenu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+}
+
+@media (min-width: 767.98px) {
+}
+
+/* col-md */
+@media (max-width: 767.98px) {
+}
+
+/* col-sm */
+@media (max-width: 575.98px) {
+  .page-content {
+    padding: 10px 20px;
+  }
+  .app-navbar-container {
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 450.98px) {
+}
+
+@media (max-width: 299.98px) {
+}
